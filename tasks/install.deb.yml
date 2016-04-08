@@ -3,15 +3,15 @@
 - include_vars: "{{ansible_distribution}}.yml"
 
 - name: Add APT key
-  apt_key: keyserver=keyserver.ubuntu.net id=7F0CEB10
+  apt_key: keyserver=keyserver.ubuntu.net id=EA312927
   when: '"mongodb-org" in mongodb_package'
 
 - name: Add APT repository
-  apt_repository: repo="{{mongodb_repository}}" update_cache=yes
+  apt_repository: repo="{{mongodb_repository}}" update_cache=yes state=present
   when: '"mongodb-org" in mongodb_package'
 
 - name: Install MongoDB package
-  apt: pkg={{mongodb_package}} state=present
+  apt: pkg=mongodb-org state=present
 
 - name: Install additional packages
   apt: pkg={{item}}

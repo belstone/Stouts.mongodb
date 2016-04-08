@@ -36,6 +36,10 @@ mongodb_conf_smallfiles: no                       # Sets MongoDB to use a smalle
 mongodb_conf_replSet:                             # Enable replication <setname>[/<optionalseedhostlist>]
 mongodb_conf_replIndexPrefetch: all               # specify index prefetching behavior (if secondary) [none|_id_only|all]
 
+# Custom settings
+mongodb_conf_oplogSize: 512
+mongodb_conf_engine: wiredTiger
+
 mongodb_shell: {}                                 # Define mongo shell commands to run
                                                   # Syntax: mongodb_shell:
                                                   #          dbname:
